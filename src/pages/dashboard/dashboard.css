@@ -1,0 +1,115 @@
+.dashboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  /* background-color: gray; */
+  flex-direction: column;
+  .texts {
+    gap: 50px;
+    flex: 9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    .logo {
+      opacity: 0.3;
+      display: flex;
+      width: 90%;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 20%;
+      }
+      h1 {
+        font-size: 64px;
+        background: linear-gradient(to right, #2170f0, #e550f0);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+    }
+    .options {
+      display: flex;
+      width: 90%;
+      justify-content: space-between;
+      gap: 30px;
+      .option {
+        flex: 1;
+        &:hover {
+          background-color: rgba(200, 200, 200, 0.3);
+        }
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        justify-content: center;
+        img {
+          width: 70px;
+          height: 70px;
+        }
+        span {
+          font-size: 20px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  .formcontainer {
+    margin-top: auto;
+    width: 70%;
+    flex: 1;
+    display: flex;
+    background-color: #303030;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    form {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 1px 20px;
+      width: 100%;
+      button {
+        border-radius: 50%;
+        cursor: pointer;
+        border: none;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+        }
+      }
+      input {
+        outline: none;
+        border: none;
+        color: #f0f0f0;
+        background: transparent;
+        flex: 1;
+        height: 60%;
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        &:focus {
+          border: 1px solid #f0f0f0;
+          background: transparent;
+        }
+      }
+      input:-webkit-autofill {
+        -webkit-text-fill-color: transparent !important; /* Makes the text transparent */
+        background-color: transparent !important; /* Also set background color to transparent if needed */
+        -webkit-box-shadow: 0 0 0 1000px white inset !important; /* If you need to override the background */
+      }
+    }
+  }
+}

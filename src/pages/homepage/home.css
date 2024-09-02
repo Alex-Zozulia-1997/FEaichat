@@ -1,0 +1,195 @@
+.home {
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    gap: 25px;
+  }
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+  .mainImgCont {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%; /* Keep the image container at a fixed height */
+    width: 100%; /* Keep the image container at a fixed width */
+    overflow: hidden;
+    z-index: -1;
+    .image {
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      opacity: 0.16;
+      animation: 100s linear infinite rotateOrbital;
+    }
+  }
+}
+@keyframes rotateOrbital {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  h1 {
+    @media screen and (max-width: 1024px) {
+      font-size: 64px;
+    }
+    font-size: 128px;
+    background: linear-gradient(to right, #2170f0, #e550f0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  h3 {
+    font-weight: 400;
+    max-width: 65%;
+    @media screen and (max-width: 1024px) {
+      max-width: 100%;
+      font-size: 16px;
+    }
+  }
+
+  a {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: linear-gradient(to right, #2170f0, #e550f0);
+    color: white;
+    border-radius: 50px;
+
+    &:hover {
+      background: linear-gradient(to right, #2170f0, #ffff);
+    }
+  }
+}
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    min-height: 50%;
+    justify-content: flex-start;
+  }
+  gap: 16px;
+
+  .imgcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #217;
+    border-radius: 50px;
+    @media screen and (max-width: 1024px) {
+      height: 50%;
+      width: 100%;
+    }
+    height: 50%;
+    width: 80%;
+    position: relative;
+    overflow: wrap;
+    .bot {
+      width: 90%;
+      height: 90%;
+      object-fit: contain;
+      animation: 3.5s ease-in-out infinite alternate botAnimation;
+    }
+
+    .bgcontainer {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      border-radius: 50px;
+      .bg {
+        background-image: url('/bg.png');
+        width: 200%;
+        height: 100%;
+        opacity: 0.5;
+        background-size: auto 100%;
+        animation: 12s ease-in-out infinite alternate slideBg;
+      }
+    }
+  }
+}
+
+.chat {
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+  position: absolute;
+  bottom: -30px;
+  right: -50px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  background-color: #229;
+  border-radius: 15px;
+  .imgMessage {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+}
+
+@keyframes botAnimation {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1.25) rotate(7deg);
+  }
+}
+@keyframes slideBg {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.messageAnimation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.terms {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  img {
+    width: 20px;
+    height: 20px;
+    @media screen and (max-width: 1024px) {
+      display: none;
+    }
+  }
+  .links {
+    color: #2170f0;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,76 @@
+.chatPage {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #101010;
+  align-items: center;
+
+  .wrapper {
+    flex: 1;
+    overflow-y: auto; /* Allows vertical scrolling */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+    position: relative;
+  }
+
+  .chatAi {
+    overflow: scroll;
+    width: 100%; /* Full width of the container */
+    margin-bottom: 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Default alignment to start (left) */
+
+    .message {
+      overflow-wrap: break-word;
+      width: auto;
+      max-width: 70%;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 100;
+      padding: 20px;
+      background-color: #616161;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      word-wrap: break-word;
+
+      &.ai {
+        margin-left: 40px;
+        align-self: flex-start; /* Align AI messages to the left */
+      }
+
+      &.human {
+        margin-right: 40px;
+        align-self: flex-end; /* Align human messages to the right */
+      }
+    }
+  }
+}
+p,
+li,
+pre {
+  margin: 10px 0;
+  max-width: 95%;
+}
+ol {
+  overflow-wrap: break-word;
+  margin: 10px 0;
+  max-width: 95%;
+  padding-left: 20px;
+}
+code {
+  white-space: pre-wrap; /* Allows the code to wrap to the next line */
+  word-break: break-word; /* Breaks long words that might overflow */
+  overflow-wrap: break-word; /* Breaks lines at spaces or hyphens to prevent overflow */
+  margin: 10px 0;
+  max-width: 95%; /* Limits the width of the code block to 95% of its container */
+  padding-left: 20px;
+  display: block; /* Ensures the code block takes up the full width available */
+  box-sizing: border-box; /* Ensures padding is included in the element's width calculation */
+}
